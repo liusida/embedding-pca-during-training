@@ -13,7 +13,7 @@ checkpoint_filter:
   step_stride: 1
 
 embedding:
-  # Placeholder; refine based on actual tensor names in OLMo checkpoints.
   key_patterns:
-    - contains_all: ["embed", "weight"]
+    # OLMo-1B uses "model.transformer.wte.weight" for token embeddings.
+    - contains_all: ["wte", "weight"]
 
