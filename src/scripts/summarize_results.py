@@ -39,12 +39,20 @@ def main() -> None:
 
     print(f"Loaded {len(rows)} records from {args.path}")
     first = rows[0]
-    model_id = first.get("model_id")
+
+    # Support both new schema (model_id) and older one (model)
+    model_id = first.get("model_id") or first.get("model") or "<unknown>"
+
     steps = [r.get("step") for r in rows if isinstance(r.get("step"), int)]
     steps = sorted(set(steps))
 
     print(f"Model: {model_id}")
-    print(f"Unique steps: {len(steps)} (min={min(steps)}, max={max(steps)})")
+    if steps:
+        print(f"Unique steps: {len(steps)} (min={min(steps)}, max={max(steps)})")
+    else:
+        # Fallback when legacy files don't have explicit step numbers
+        revisions = sorted({str(r.get("revision")) for r in rows})
+        print(f"No numeric steps found; unique revisions: {len(revisions)}")
 
 
 if __name__ == "__main__":

@@ -5,7 +5,8 @@ branch_parse:
   # Placeholder patterns; adjust once you inspect actual OLMo repo refs.
   regex_patterns:
     - pattern: "stage(?P<stage>\\d+)-step(?P<step>\\d+)"
-
+    - pattern: "step(?P<step>\\d+)"
+    
 checkpoint_filter:
   min_step: 0
   max_step: null

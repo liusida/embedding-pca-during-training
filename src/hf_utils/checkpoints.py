@@ -46,9 +46,19 @@ def list_revisions(
     ]
 
     parsed: List[RevisionInfo] = []
+    unmatched: List[str] = []
     for b in branches:
         stage, step = _parse_revision_name(b.name, parse_cfg)
+        if stage == 10**9 and step == 10**9:
+            unmatched.append(b.name)
         parsed.append(RevisionInfo(name=b.name, stage=stage, step=step))
+
+    if unmatched:
+        sample = ", ".join(unmatched[:5])
+        print(
+            f"[checkpoints] Warning: {len(unmatched)} revisions did not match any branch_parse pattern. "
+            f"Examples: {sample}"
+        )
 
     parsed.sort(key=lambda r: (r.stage, r.step))
 
