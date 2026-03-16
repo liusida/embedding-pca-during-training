@@ -1,0 +1,18 @@
+family: olmo
+description: "OLMo family of decoder-only transformers from AI2."
+
+branch_parse:
+  # Placeholder patterns; adjust once you inspect actual OLMo repo refs.
+  regex_patterns:
+    - pattern: "stage(?P<stage>\\d+)-step(?P<step>\\d+)"
+
+checkpoint_filter:
+  min_step: 0
+  max_step: null
+  step_stride: 1
+
+embedding:
+  # Placeholder; refine based on actual tensor names in OLMo checkpoints.
+  key_patterns:
+    - contains_all: ["embed", "weight"]
+

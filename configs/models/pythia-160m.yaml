@@ -1,0 +1,16 @@
+model_id: pythia-160m
+family: pythia
+repo_id: "EleutherAI/pythia-160m"
+
+results:
+  output_dir: "results/pythia-160m"
+  pca_file: "pca.jsonl"
+
+download:
+  cache_dir: "models_cache/pythia-160m"
+
+pca:
+  n_components: null  # null = full PCA
+  whiten: false
+  random_state: null
+

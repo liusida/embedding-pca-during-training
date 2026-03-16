@@ -1,0 +1,20 @@
+family: pythia
+description: "EleutherAI Pythia family of decoder-only transformers."
+
+branch_parse:
+  # Try stage-step pattern first, then simple step
+  regex_patterns:
+    - pattern: "stage(?P<stage>\\d+)-step(?P<step>\\d+)"
+    - pattern: "step(?P<step>\\d+)"
+
+checkpoint_filter:
+  # Optional global filters for this family (can be overridden per model)
+  min_step: 0
+  max_step: null
+  step_stride: 1
+
+embedding:
+  # Generic heuristic for Pythia: look for keys containing both "embed" and "weight"
+  key_patterns:
+    - contains_all: ["embed", "weight"]
+
