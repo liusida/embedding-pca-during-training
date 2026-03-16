@@ -1,0 +1,16 @@
+model_id: olmo-2-13b
+family: olmo
+repo_id: "allenai/OLMo-2-1124-13B"
+
+results:
+  output_dir: "results/olmo-2-13b"
+  pca_file: "pca.jsonl"
+
+download:
+  cache_dir: "models_cache/olmo-2-13b"
+
+pca:
+  n_components: null
+  whiten: false
+  random_state: null
+

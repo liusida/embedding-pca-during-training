@@ -1,0 +1,16 @@
+model_id: olmo-3-32b
+family: olmo
+repo_id: "allenai/Olmo-3-1125-32B"
+
+results:
+  output_dir: "results/olmo-3-32b"
+  pca_file: "pca.jsonl"
+
+download:
+  cache_dir: "models_cache/olmo-3-32b"
+
+pca:
+  n_components: null
+  whiten: false
+  random_state: null
+

@@ -1,0 +1,16 @@
+model_id: pythia-12b
+family: pythia
+repo_id: "EleutherAI/pythia-12b"
+
+results:
+  output_dir: "results/pythia-12b"
+  pca_file: "pca.jsonl"
+
+download:
+  cache_dir: "models_cache/pythia-12b"
+
+pca:
+  n_components: null  # full PCA
+  whiten: false
+  random_state: null
+

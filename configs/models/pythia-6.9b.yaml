@@ -1,0 +1,16 @@
+model_id: pythia-6.9b
+family: pythia
+repo_id: "EleutherAI/pythia-6.9b"
+
+results:
+  output_dir: "results/pythia-6.9b"
+  pca_file: "pca.jsonl"
+
+download:
+  cache_dir: "models_cache/pythia-6.9b"
+
+pca:
+  n_components: null  # full PCA
+  whiten: false
+  random_state: null
+
