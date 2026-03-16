@@ -1,0 +1,16 @@
+model_id: pythia-70m
+family: pythia
+repo_id: "EleutherAI/pythia-70m"
+
+results:
+  output_dir: "results/pythia-70m"
+  pca_file: "pca.jsonl"
+
+download:
+  cache_dir: "models_cache/pythia-70m"
+
+pca:
+  n_components: null  # full PCA
+  whiten: false
+  random_state: null
+

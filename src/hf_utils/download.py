@@ -20,7 +20,6 @@ def download_checkpoint(model_cfg: ModelConfig, revision: str) -> str:
         repo_id=model_cfg.repo_id,
         revision=revision,
         local_dir=local_dir,
-        local_dir_use_symlinks=False,
     )
     return local_path
 
